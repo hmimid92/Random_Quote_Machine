@@ -1,0 +1,190 @@
+@use 'sass:map';
+@use 'sass:color';
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/utilities";
+
+
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes animation-global {
+    0%   {background-color:rgba(223, 116, 116,1);}
+    75%  {background-color:rgba(223, 116, 116,0.3);}
+    100% {background-color:rgba(223, 116, 116,0.1);}
+  }
+
+  @keyframes animation-global1 {
+    0%   {color:rgba(223, 116, 116,1);}
+    75%  {color:rgba(223, 116, 116,0.3);}
+    100% {color:rgba(223, 116, 116,0.1);}
+  }
+
+  #main-content {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0%;
+    animation-name: animation-global;
+    animation-duration: 2s;
+  }
+
+  .bi-dash {
+    font: {
+        family: $font-family-sans-serif;
+        size: $font-size-base;
+    }
+  }
+
+#quote-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 550px;
+    margin: 0px 40px;
+    height: auto;
+    background-color: $white;
+    border-radius: $border-radius;
+    border: $secondary-border-subtle;
+    padding: 30px;
+}
+
+#text {
+    text-align: center;
+    height: auto;
+    font: {
+        weight: bold;
+        size: 22px;
+        family: $font-family-monospace;
+    }
+    margin-top: 10px;
+    margin-bottom: 6px;
+    i {
+        margin-top: -20px;
+        margin-left: 6px;
+    }
+    animation-name: animation-global1;
+   animation-duration: 2s;
+    
+}
+
+.bi-quote {
+    font-size: 40px;
+}
+
+#designer {
+    text-align: center;
+    margin-top: 6px;
+    font : {
+        size: $font-size-sm;
+        weight: $font-weight-light;
+        family: $font-family-monospace;
+    }
+    text-decoration: none;
+    color: $white;
+    a {
+        text-decoration: none;
+    color: $white;
+    }
+
+    a:hover {
+    color: opacify($black, 0.9);
+    }
+}
+
+#connectTo {
+    display: flex;
+    width: 550px;
+    a {
+        animation-name: animation-global;
+        animation-duration: 2s;
+    }
+    a:first-child {
+        margin-left: 30px;
+    }
+
+    a:last-of-type {
+        margin-left: 6px;
+        margin-right: 86px;
+    }
+
+    button {
+        margin-left: 210px;
+        margin-right: 0;
+        animation-name: animation-global;
+  animation-duration: 2s;
+    }
+}
+
+@mixin style-icon($padding) {
+    font-size: x-large;
+    color: shift-color($white, -30%);
+    border-radius: $border-radius;
+    padding: 13px $padding 0px $padding; 
+    border: 1px solid gray; 
+  }
+
+  #tweet-quote {
+    text-decoration: none;
+    color: $white;
+    border-radius: $border-radius;
+    z-index: 44;
+    &:hover {
+        background-color:shade-color($gray-600, 90%);
+    }
+}
+
+#x-icon {
+    @include style-icon(12px);
+}
+
+ #tum-icon {
+    @include style-icon(18px);
+}
+
+#new-quote {
+    color: $white;
+    margin-top: 6px;
+    font : {
+        size:$font-size-sm;
+        weight:$font-weight-bold;
+    }
+    & {
+        cursor: pointer;
+    }
+
+    &:hover {
+        background-color:shade-color($gray-600, 90%);
+    }
+    border-radius: $border-radius-sm;
+    padding: 12px;
+}
+
+#author {
+    align-self: flex-end;
+    margin: {
+        bottom: 18px;
+        right: 9px;
+    }
+    font : {
+        style: italic;
+        family: $font-family-code;
+    }
+    animation-name: animation-global1;
+   animation-duration: 2s;
+}
+
+
+
+
